@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-namespace Concurrency.Chapter01Overview
+namespace Concurrency.Chapters
 {
     public class Chapter01
     {

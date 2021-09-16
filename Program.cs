@@ -1,19 +1,19 @@
-﻿using Concurrency.Chapter01Overview;
+﻿using Concurrency.Chapters;
 using System;
-using System.Threading;
-using System.Threading.Tasks;
+using System.Collections.Generic;
 
 namespace Concurrency
 {
     class Program
     {
-        static async Task Main(string[] args)
+        static void Main(string[] args)
         {
-            Console.WriteLine(Thread.CurrentThread.ManagedThreadId);
             Console.WriteLine("Hello World!");
 
-            Chapter02 chapter02 = new Chapter02();
-            await chapter02.ProcessTasksAsync();
+            Chapter03 chapter03 = new Chapter03();
+            List<int> ints = new List<int> { 1, 2, 3, 4, 8, 21, 7 };
+            
+            chapter03.StoppingParallelForEach(ints);
 
             Console.WriteLine("Done");
         }
