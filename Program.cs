@@ -2,6 +2,7 @@
 using Concurrency.Models;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Concurrency
 {
@@ -12,12 +13,21 @@ namespace Concurrency
             Console.WriteLine("Hello World!");
 
             Chapter03 chapter03 = new Chapter03();
-            //List<int> ints = new List<int> { 1, 2, 3, 4, 8, 21, 7 };
+            List<int> ints = new List<int> { 1, 2, 3, 4, 8, 21, 7, 15, 13, 7, 9 };
 
             //chapter03.StoppingParallelForEach(ints);
 
-            BinaryTree binaryTree = chapter03.PopulateTree();
-            chapter03.ProcessTree(binaryTree.Root);
+            //BinaryTree binaryTree = chapter03.PopulateTree();
+            //chapter03.ProcessTree(binaryTree.Root);
+
+            List<int> output = chapter03.MultiplyBy2(ints);
+            output.ForEach(item => Console.Write(item + " "));
+
+            Console.WriteLine();
+
+            output = chapter03.OrderedMultiplyBy2(ints);
+            output.ForEach(item => Console.Write(item + " "));
+            Console.WriteLine();
 
             Console.WriteLine("Done");
         }

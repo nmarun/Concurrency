@@ -1,6 +1,7 @@
 ﻿using Concurrency.Models;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -76,5 +77,15 @@ namespace Concurrency.Chapters
             return binaryTree;
         }
 
+        // both these methods produced the same output
+        // the output was ordered in both
+        public List<int> MultiplyBy2(List<int> values)
+        {
+            return values.AsParallel().Select(item => item * 2).ToList();
+        }
+        public List<int> OrderedMultiplyBy2(List<int> values)
+        {
+            return values.AsParallel().AsOrdered().Select(item => item * 2).ToList();
+        }
     }
 }
