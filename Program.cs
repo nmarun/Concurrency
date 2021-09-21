@@ -30,9 +30,15 @@ namespace Concurrency
             //output.ForEach(item => Console.Write(item + " "));
             //Console.WriteLine();
 
-            Chapter09 chapter09 = new Chapter09();
+            //Chapter09 chapter09 = new Chapter09();
             //await chapter09.CancellableTasks();
-            await chapter09.CancellOtherTaskwhenOneIsDone();
+            //await chapter09.CancellOtherTaskwhenOneIsDone();
+
+            Chapter13 chapter13 = new Chapter13();
+            Console.WriteLine(chapter13.UseSharedInteger());
+            Console.WriteLine(chapter13.UseSharedInteger());
+            Console.WriteLine(chapter13.UseSharedInteger());
+            Console.WriteLine(chapter13.UseSharedInteger());
 
             Console.WriteLine("Done");
         }
